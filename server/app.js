@@ -6,6 +6,7 @@ import morgan from 'morgan'
 // import errorMiddleware from './middlewares/error.middleware.js'
 // import courseRouter from './route/course.routes.js'
 import cors from 'cors'
+import userRoute from './route/user.route.js'
 // import payementRoutes from './route/payment.routes.js'
 // import demoRoute from './route/demo.routes.js'
 // import stats from './route/Stats.routes.js'
@@ -25,6 +26,7 @@ app.use(cors({
 }))
 
 app.use(morgan('dev'))
+app.use("/api/v1/user",userRoute)
 // app.use('/api/v1/user',userRoutes)
 // app.use('/api/v1/courses',courseRouter)
 // app.use('/api/v1/payements',payementRoutes)
@@ -37,7 +39,7 @@ app.use(morgan('dev'))
 // app.use(errorMiddleware)
 app.use('/',(req,res)=>{
    res.status(200).json({
-      message:"suceess",
+      message:"ka ho bab",
       "data":"don"
    })
 })
