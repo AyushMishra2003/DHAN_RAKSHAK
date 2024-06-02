@@ -34,10 +34,8 @@ const userSchema=new Schema(
                     type:String
                 },
                 purpose:{
-                    purposes:{
                         type:String,
                         enum:['ShopingImg','ShopingOther','Medical','Fun','Bills','Transport','Petrol','FoodImg','Loan','Borrow','Other']
-                    }
                 }
             }
         ]

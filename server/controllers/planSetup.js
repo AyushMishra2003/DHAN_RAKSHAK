@@ -9,6 +9,10 @@ const addPlan=async(req,res,next)=>{
 
     const user = await User.findById(id)
 
+    if(!user){
+        return next(new AppError("User not Found",400))
+    }
+
     if(!money || !status){
         return next(new AppError("All field are Required",400))
     }
