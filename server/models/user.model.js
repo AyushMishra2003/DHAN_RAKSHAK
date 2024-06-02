@@ -5,30 +5,27 @@ import { Model, Schema, model } from "mongoose";
 const userSchema=new Schema(
     {
         name:{
-            type:String
+            type:String,
+            required:true,
         },
         email:{
-            type:String
+            type:String,
+            required:true
         },
         phoneNumber:{
-            type:String
+            type:String,
+            required:true
         },
         planSetup:[
             {
                 money:{
                     type:String
                 },
-                dailyRequired:{
-                    status:{
-                        type:String,
-                        enum : ['LOAN','EDUCATION','MEDICAL','OTHER','NO'],
-                        default:'NO'
-                    },
-                    amount:{
-                        type:String
-                    }
+                status:{
+                    type:String,
+                    enum : ['LOAN','EDUCATION','MEDICAL','OTHER','NO'],
+                    default:'NO'
                 },
-
             }
         ],
         record:[
